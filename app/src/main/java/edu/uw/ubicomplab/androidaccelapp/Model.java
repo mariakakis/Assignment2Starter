@@ -225,15 +225,6 @@ public class Model {
      * @return a newly created Instances object
      */
     private Instances createInstances(String filename) {
-        // Check read permissions
-        if (ContextCompat.checkSelfPermission(context, Manifest.permission.READ_EXTERNAL_STORAGE)
-                != PackageManager.PERMISSION_GRANTED) {
-            Toast.makeText(context,
-                    "Please give app permissions in Settings > Installed apps > AndroidAccelApp",
-                    Toast.LENGTH_SHORT).show();
-            return null;
-        }
-
         // Read the file
         File SDFile = android.os.Environment.getExternalStorageDirectory();
         String fullFileName = SDFile.getAbsolutePath() + File.separator + filename;
@@ -266,15 +257,6 @@ public class Model {
      * @return writer: the PrintWriter object to be used
      */
     public PrintWriter createPrintWriter(String filename) {
-        // Check permissions
-        if (ContextCompat.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                != PackageManager.PERMISSION_GRANTED) {
-            Toast.makeText(context,
-                    "Please give app permissions in Settings > Installed apps > AndroidAccelApp",
-                    Toast.LENGTH_SHORT).show();
-            return null;
-        }
-
         // Create the file
         File SDFile = android.os.Environment.getExternalStorageDirectory();
         String fullFileName = SDFile.getAbsolutePath() + File.separator + filename;
