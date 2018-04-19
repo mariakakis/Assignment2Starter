@@ -21,7 +21,6 @@ import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
 
 import java.util.Timer;
 import java.util.TimerTask;
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements SensorEventListener {
 
